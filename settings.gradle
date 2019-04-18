@@ -1,0 +1,8 @@
+rootProject.name = 'workshop'
+include 'config_server'
+include 'discovery_server'
+include 'gateway_server'
+include 'cobol_service'
+include 'java_service'
+include 'secret_service'
+

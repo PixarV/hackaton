@@ -1,0 +1,14 @@
+zuul:
+  routes:
+    cobol1:
+      path: /cobol
+      serviceId: cobol
+      strip-prefix: false
+    java1:
+      path: /java
+      serviceId: java
+      strip-prefix: false
+    secret1:
+      path: /secret
+      serviceId: secret
+      strip-prefix: false
