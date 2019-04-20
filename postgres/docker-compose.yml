@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+     - "5432:5432"
+    environment:
+      - PGDATA=/var/lib/pgsql/data
+    volumes:
+      - /home/ritt/data:/var/lib/pgsql/data
+      - /home/ritt/rtlabs/docker/scripts:/scripts
+volumes:
+  pgdata:
+    driver: local
