@@ -39,6 +39,7 @@ services:
 #      - pipkp
 
   demo:
+    container_name: demo
     build: demo
     ports:
       - "8085:8085"
@@ -47,11 +48,11 @@ services:
       - HOST_IP=10.77.145.14
     networks:
       - pipkp
-#    healthcheck:
-#      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/cobol"]
-#      interval: 10s
-#      timeout: 10s
-#      retries: 10
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/hello"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
 #
 #  java_service:
 #    build: java_service
