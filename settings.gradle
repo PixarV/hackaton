@@ -6,4 +6,5 @@ include 'demo'
 include 'java_service'
 include 'secret_service'
 include 'demo'
+include 'demo_spring_data'
 
