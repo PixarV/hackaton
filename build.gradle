@@ -1,5 +1,5 @@
 buildscript {
-    group 'com.epam'
+    group 'com.hackaton'
     version '0.0.1-SNAPSHOT'
 
     ext {

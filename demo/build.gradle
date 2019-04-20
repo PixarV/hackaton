@@ -1,0 +1,4 @@
+dependencies {
+    compile boot["starterWeb"]
+    compile boot["springBootPlugin"]
+}
