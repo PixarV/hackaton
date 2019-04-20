@@ -20,14 +20,14 @@ services:
     networks:
       - pipkp
 
-  discovery_service:
-    build: discovery_server
-    ports:
-      - "8082:8082"
-    environment:
-      - HOST_IP=10.77.145.14
-    networks:
-      - pipkp
+#  discovery_service:
+#    build: discovery_server
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      - HOST_IP=10.77.145.14
+#    networks:
+#      - pipkp
 
 #  gateway_service:
 #    build: gateway_server
@@ -37,15 +37,16 @@ services:
 #      - HOST_IP=${HOST_IP}
 #    networks:
 #      - pipkp
-#
-#  cobol_service:
-#    build: cobol_service
-#    ports:
-#      - "8085:8085"
-#    environment:
+
+  demo:
+    build: demo
+    ports:
+      - "8085:8085"
+    environment:
 #      - HOST_IP=${HOST_IP}
-#    networks:
-#      - pipkp
+      - HOST_IP=10.77.145.14
+    networks:
+      - pipkp
 #    healthcheck:
 #      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/cobol"]
 #      interval: 10s
