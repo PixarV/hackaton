@@ -44,7 +44,8 @@ buildscript {
                 eurekaClient : "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
                 zuul         : "org.springframework.cloud:spring-cloud-starter-zuul:$zuulVersion",
                 springSession: "org.springframework.session:spring-session:1.3.4.RELEASE",
-                starterRedis : "org.springframework.boot:spring-boot-starter-data-redis:2.1.0.RELEASE"
+                starterRedis : "org.springframework.boot:spring-boot-starter-data-redis:2.1.0.RELEASE",
+                feign        : "org.springframework.cloud:spring-cloud-starter-openfeign:2.1.1.RELEASE"
         ]
 
         test = [
