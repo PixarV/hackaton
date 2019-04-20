@@ -9,8 +9,8 @@ services:
     environment:
       - PGDATA=/var/lib/pgsql/data
     volumes:
-      - /home/ritt/data:/var/lib/pgsql/data
-      - /home/ritt/rtlabs/docker/scripts:/scripts
+      - ~/docker/data:/var/lib/pgsql/data
+      - ~/docker/scripts:/scripts
 volumes:
   pgdata:
     driver: local
