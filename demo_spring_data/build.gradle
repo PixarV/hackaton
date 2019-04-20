@@ -1,0 +1,10 @@
+dependencies {
+    compile boot["starterWeb"]
+    compile boot["springBootPlugin"]
+    compile boot["starterJpa"]
+    compile boot["starterRestRepo"]
+    compile misc["lombok"]
+    compile cloud["eurekaClient"]
+    compile cloud["feign"]
+    implementation('org.postgresql:postgresql')
+}

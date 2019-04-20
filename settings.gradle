@@ -1,8 +1,10 @@
-rootProject.name = 'workshop'
+rootProject.name = 'hackaton'
 include 'config_server'
 include 'discovery_server'
 include 'gateway_server'
-include 'cobol_service'
+include 'demo'
 include 'java_service'
 include 'secret_service'
+include 'demo'
+include 'demo_spring_data'
 
