@@ -1,14 +1,6 @@
 version: '3'
 services:
 
-#  config_service:
-#    build: config_server
-#    ports:
-#      - "8081:8081"
-#    environment:
-#      - HOST_IP=${HOST_IP}
-#    networks:
-#      - pipkp
   nginx:
     build: nginx
     ports:
@@ -16,71 +8,48 @@ services:
     volumes:
       - ./nginx/src:/usr/share/nginx/html
     environment:
-      - HOST_IP=10.77.145.14
+      - HOST_IP=${HOST_IP}
     networks:
       - pipkp
 
-#  discovery_service:
-#    build: discovery_server
-#    ports:
-#      - "8082:8082"
-#    environment:
-#      - HOST_IP=10.77.145.14
-#    networks:
-#      - pipkp
-
-#  gateway_service:
-#    build: gateway_server
-#    ports:
-#      - "8080:8080"
-#    environment:
-#      - HOST_IP=${HOST_IP}
-#    networks:
-#      - pipkp
-
-  demo:
-    container_name: demo
-    build: demo
+  discovery_service:
+    build: discovery_server
     ports:
-      - "8085:8085"
+      - "8082:8082"
     environment:
+      - HOST_IP=${HOST_IP}
+    networks:
+      - pipkp
+
+#  demo:
+#    container_name: demo
+#    build: demo
+#    ports:
+#      - "8085:8085"
+#    environment:
 #      - HOST_IP=${HOST_IP}
-      - HOST_IP=10.77.145.14
+##      - HOST_IP=10.77.145.14
+#    networks:
+#      - pipkp
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/hello"]
+#      interval: 10s
+#      timeout: 10s
+#      retries: 10
+#
+  java_service:
+    build: java_service
+    ports:
+      - "8087:8087"
+    environment:
+      - HOST_IP=${HOST_IP}
     networks:
       - pipkp
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/hello"]
+      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/java"]
       interval: 10s
       timeout: 10s
       retries: 10
-#
-#  java_service:
-#    build: java_service
-#    ports:
-#      - "8087:8087"
-#    environment:
-#      - HOST_IP=${HOST_IP}
-#    networks:
-#      - pipkp
-#    healthcheck:
-#      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/java"]
-#      interval: 10s
-#      timeout: 10s
-#      retries: 10
-#
-#  secret_service:
-#    build: secret_service
-#    ports:
-#      - "8086:8086"
-#    environment:
-#      - HOST_IP=${HOST_IP}
-#    networks:
-#      - pipkp
-#    healthcheck:
-#      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/secret"]
-#      interval: 10s
-#      timeout: 10s
-#      retries: 10
 
 networks:
   pipkp:
