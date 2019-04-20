@@ -5,4 +5,5 @@ include 'gateway_server'
 include 'demo'
 include 'java_service'
 include 'secret_service'
+include 'demo'
 
