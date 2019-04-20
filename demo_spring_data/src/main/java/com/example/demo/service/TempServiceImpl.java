@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class TempServiceImpl implements TempService {
 
-    private final CrudTempRepository repository;
+    private CrudTempRepository repository;
 
     @Override
     public Temp get(int id) {
