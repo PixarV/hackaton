@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @Autowired
-    TempClient client;
     private TempClient client;
 
     @GetMapping("/hello")
