@@ -1,8 +1,7 @@
 dependencies {
+    compile project(":demo_spring_data")
     compile boot["starterWeb"]
     compile boot["springBootPlugin"]
-    compile misc["lombok"]
     compile cloud["eurekaClient"]
     compile cloud["feign"]
-    compile project(":demo_spring_data")
 }

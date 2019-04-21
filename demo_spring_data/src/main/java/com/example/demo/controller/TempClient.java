@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface TempClient {
 
     @GetMapping(value = "/temp/{id}")
-    Temp get(@PathVariable("id") int id);
+    String get(@PathVariable("id") int id);
 }

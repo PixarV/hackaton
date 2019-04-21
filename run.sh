@@ -3,7 +3,7 @@
 set -e
 
 # Build the project and docker images
-#./gradlew bootJar
+./gradlew bootJar
 
 ip=$(ip route get 8.8.4.4 | head -1 | awk '{print $7}')
 export HOST_IP=${ip}
