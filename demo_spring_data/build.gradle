@@ -3,8 +3,9 @@ dependencies {
     compile boot["springBootPlugin"]
     compile boot["starterJpa"]
     compile boot["starterRestRepo"]
-    compile misc["lombok"]
+    compile misc["model_mapper"]
     compile cloud["eurekaClient"]
     compile cloud["feign"]
+    compile project(":demo_common")
     implementation('org.postgresql:postgresql')
 }

@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Temp;
+import com.example.demo.dto.TempDto;
 import com.example.demo.service.TempService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +16,8 @@ public class TempController {
     private TempService tempService;
 
     @GetMapping(value = "/{id}")
-    public Temp get(@PathVariable("id") int id) {
-        System.out.println("in rest-controller");
+    public TempDto get(@PathVariable("id") int id) {
+        System.out.println("in rest-controller with id" + id);
         return tempService.get(id);
     }
 }

@@ -73,7 +73,8 @@ buildscript {
                 javax_inject: "javax.inject:javax.inject:1",
                 servlet     : "javax.servlet:javax.servlet-api:3.1.0",
                 javaee_api  : "javax:javaee-api:7.0",
-                postgresql  : "postgresql:postgresql:9.1-901-1.jdbc4"
+                postgresql  : "postgresql:postgresql:9.1-901-1.jdbc4",
+                model_mapper: "org.modelmapper:modelmapper:2.3.3"
         ]
         
     }
@@ -96,6 +97,8 @@ subprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
+    jar.enabled = true
+
     sourceCompatibility = 1.8
 
     repositories {
@@ -103,10 +106,11 @@ subprojects {
     }
 
     dependencies {
-//        compileOnly misc["lombok"]
+        compileOnly misc["lombok"]
         compile misc["swagger2"]
         compile misc["swagger_ui"]
         compile misc["gson"]
+        annotationProcessor 'org.projectlombok:lombok'
     }
 
     dependencyManagement {
