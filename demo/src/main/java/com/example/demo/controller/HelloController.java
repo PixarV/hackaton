@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.clients.TempClient;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class HelloController {
 
+    @Autowired
+    TempClient client;
     private TempClient client;
 
     @GetMapping("/hello")

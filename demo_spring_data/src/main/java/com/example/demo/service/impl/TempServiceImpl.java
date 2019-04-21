@@ -5,6 +5,7 @@ import com.example.demo.model.Temp;
 import com.example.demo.repository.CrudTempRepository;
 import com.example.demo.service.TempService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +13,10 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class TempServiceImpl implements TempService {
 
+    @Autowired
     private CrudTempRepository repository;
 
+    @Autowired
     private ModelMapper modelMapper;
 
     @Override

@@ -1,10 +1,12 @@
 version: '3'
 services:
 
-  config_service:
-    build: config_server
+  nginx:
+    build: nginx
     ports:
-      - "8081:8081"
+      - "8080:80"
+    volumes:
+      - ./nginx/src:/usr/share/nginx/html
     environment:
       - HOST_IP=${HOST_IP}
     networks:
@@ -19,56 +21,26 @@ services:
     networks:
       - pipkp
 
-  gateway_service:
-    build: gateway_server
+  demo:
+    container_name: demo
+    build: demo
     ports:
-      - "8080:8080"
+      - "8088:8088"
     environment:
       - HOST_IP=${HOST_IP}
     networks:
       - pipkp
 
-  cobol_service:
-    build: cobol_service
-    ports:
-      - "8085:8085"
-    environment:
-      - HOST_IP=${HOST_IP}
-    networks:
-      - pipkp
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/cobol"]
-      interval: 10s
-      timeout: 10s
-      retries: 10
-
-  java_service:
-    build: java_service
+  demo_data:
+    container_name: demospringdata
+    build: demo_spring_data
     ports:
       - "8087:8087"
     environment:
       - HOST_IP=${HOST_IP}
     networks:
       - pipkp
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/java"]
-      interval: 10s
-      timeout: 10s
-      retries: 10
 
-  secret_service:
-    build: secret_service
-    ports:
-      - "8086:8086"
-    environment:
-      - HOST_IP=${HOST_IP}
-    networks:
-      - pipkp
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://${HOST_IP}:8080/secret"]
-      interval: 10s
-      timeout: 10s
-      retries: 10
 
 networks:
   pipkp:
