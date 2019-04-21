@@ -109,6 +109,7 @@ subprojects {
         compile misc["swagger2"]
         compile misc["swagger_ui"]
         compile misc["gson"]
+        annotationProcessor 'org.projectlombok:lombok'
     }
 
     dependencyManagement {
