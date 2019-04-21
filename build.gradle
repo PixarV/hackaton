@@ -73,7 +73,8 @@ buildscript {
                 javax_inject: "javax.inject:javax.inject:1",
                 servlet     : "javax.servlet:javax.servlet-api:3.1.0",
                 javaee_api  : "javax:javaee-api:7.0",
-                postgresql  : "postgresql:postgresql:9.1-901-1.jdbc4"
+                postgresql  : "postgresql:postgresql:9.1-901-1.jdbc4",
+                model_mapper: "org.modelmapper:modelmapper:2.3.3"
         ]
         
     }

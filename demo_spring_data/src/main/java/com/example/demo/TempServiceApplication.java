@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableEurekaClient
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients("com.example.demo.clients")
 public class TempServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(TempServiceApplication.class, args);

@@ -4,5 +4,4 @@ dependencies {
     compile misc["lombok"]
     compile cloud["eurekaClient"]
     compile cloud["feign"]
-    compile project(":demo_common")
 }

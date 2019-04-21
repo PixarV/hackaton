@@ -1,19 +1,27 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.dto.TempDto;
 import com.example.demo.model.Temp;
 import com.example.demo.repository.CrudTempRepository;
 import com.example.demo.service.TempService;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class TempServiceImpl implements TempService {
 
-    private final CrudTempRepository repository;
+    private CrudTempRepository repository;
+
+    private ModelMapper modelMapper;
 
     @Override
-    public Temp get(int id) {
-        return repository.findById(id).orElse(null);
+    public TempDto get(int id) {
+        return convertToDto(repository.findById(id).orElse(null));
+    }
+
+    private TempDto convertToDto(Temp temp) {
+        return modelMapper.map(temp, TempDto.class);
     }
 }

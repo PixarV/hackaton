@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Temp;
+import com.example.demo.dto.TempDto;
 
 public interface TempService {
-    Temp get(int id);
+    TempDto get(int id);
 }
